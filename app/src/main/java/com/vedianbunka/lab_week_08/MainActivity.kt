@@ -105,12 +105,6 @@ class MainActivity : AppCompatActivity() {
             .observe(this) { info ->
                 if (info.state.isFinished) {
                     showResult("Second process is done")
-                }
-            }
-        workManager.getWorkInfoByIdLiveData(secondRequest.id)
-            .observe(this) { info ->
-                if (info.state.isFinished) {
-                    showResult("Second process is done")
                     launchNotificationService()
                 }
             }
